@@ -40,6 +40,7 @@ export default class App extends Component {
             <PublicOnlyRoute
               path={'/register'}
               component={RegistrationRoute}
+              className='registration-section'
             />
             <PublicOnlyRoute
               path={'/login'}

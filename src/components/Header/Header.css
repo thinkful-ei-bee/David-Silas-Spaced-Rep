@@ -1,0 +1,18 @@
+nav {
+  text-align: right;
+  float: right;
+  margin-top: 5px;
+}
+
+.main-header h1 {
+  display: inline-block;
+  clear: right;
+  position: relative;
+  right: 5px;
+}
+
+.main-header a {
+  text-decoration: none;
+  padding: 5px;
+  color: tomato;
+}

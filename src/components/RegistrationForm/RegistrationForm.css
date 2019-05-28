@@ -1,0 +1,27 @@
+section {
+  max-width: 400px;
+  margin: auto;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgb(255, 252, 248);
+}
+
+.reg-element {
+  padding: 5px;
+}
+
+.reg-element label {
+  padding-right: 8px;
+}
+
+.sign-up-button {
+  display: block;
+  margin: auto;
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: lightblue;
+  margin-bottom: 16px;
+}
