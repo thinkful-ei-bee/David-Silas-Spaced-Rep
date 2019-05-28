@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LanguageService from '../../services/language-service'
-
+import TokenService from '../../services/token-service';
+import UserContext from '../../contexts/UserContext';
 
 class DashboardRoute extends Component {
   state = {
@@ -8,15 +9,24 @@ class DashboardRoute extends Component {
     words: [],
   }
 
+  static contextType = UserContext;
+
   componentDidMount() {
     LanguageService.getAll()
       .then(res => {
-        console.log(res)
         this.setState({
-          language: res.language,
-          words: res.words
-        })
-      })
+            language: res.language,
+            words: res.words
+          });
+      }).catch(e => {
+        console.log(e);
+        if (e.error === 'Unauthorized request') {
+            console.log('got inside the test');
+            console.log(this.context);
+            this.context.processLogout();
+            this.props.history.push('/login');
+        }
+      });
   }
 
   render() {
