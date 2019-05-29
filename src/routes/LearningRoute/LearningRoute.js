@@ -12,6 +12,7 @@ class LearningRoute extends Component {
     totalScore: null,
     guess: '',
     correctGuess: 0,
+    isCorrect: null,
   }
 
   componentDidMount() {
@@ -32,28 +33,30 @@ class LearningRoute extends Component {
     console.log(this.state.guess)
     LanguageService.postGuess(this.state.guess)
       .then(head => {
-        if(head.totalScore === this.state.totalScore) {
+        if (head.isCorrect) {
           this.setState({
             nextWord: head.nextWord,
             answer: head.answer,
             wordCorrectCount: head.wordCorrectCount,
             wordIncorrectCount: head.wordIncorrectCount,
             totalScore: head.totalScore,
-            correctGuess: false
+            correctGuess: true,
+            isCorrect: head.isCorrect,
           })
+          return;
         }
-
-        else if (head.totalScore > this.state.totalScore) {
+        else {
           this.setState({
             nextWord: head.nextWord,
             answer: head.answer,
             wordCorrectCount: head.wordCorrectCount,
             wordIncorrectCount: head.wordIncorrectCount,
             totalScore: head.totalScore,
-            correctGuess: true
+            correctGuess: false,
+            isCorrect: head.isCorrect,
           })
+          return;
         }
-
       })
   }
 
@@ -88,7 +91,9 @@ class LearningRoute extends Component {
         </form>
 
         <div className='DisplayScore'>
-          <p>{`Your total score is: ${this.state.totalScore}`}</p>
+          <p>
+            {`Your total score is: ${this.state.totalScore}`}
+          </p>
         </div>
 
         <div className='DisplayFeedback'>
