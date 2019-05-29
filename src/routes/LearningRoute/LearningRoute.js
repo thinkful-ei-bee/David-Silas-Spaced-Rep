@@ -20,10 +20,14 @@ class LearningRoute extends Component {
       .then(head => {
         this.setState({
           nextWord: head.nextWord,
+          answer: null,
           lastWord: head.nextWord,
           wordCorrectCount: head.wordCorrectCount,
           wordIncorrectCount: head.wordIncorrectCount,
-          totalScore: head.totalScore
+          totalScore: head.totalScore,
+          guess: '',
+          correctGuess: 0,
+          isCorrect: null,
         })
       })
   }
@@ -31,6 +35,20 @@ class LearningRoute extends Component {
   handleSubmitAnswer(event) {
     event.preventDefault()
     console.log(this.state.guess)
+
+    // If a guess has already been submitted
+    if (this.state.isCorrect !== null) {
+      this.setState({
+        answer: null,
+        lastWord: this.state.nextWord,
+        guess: '',
+        correctGuess: 0,
+        isCorrect: null,
+      })
+
+      return;
+    }
+
     LanguageService.postGuess(this.state.guess)
       .then(head => {
         if (head.isCorrect) {
@@ -74,7 +92,7 @@ class LearningRoute extends Component {
           {correctGuess === false && 'Good try, but not quite right :('}
         </h2>
 
-        <span>{this.state.nextWord}</span>
+        <span>{this.state.lastWord}</span>
 
         <form className='main_form' onSubmit={(event) => this.handleSubmitAnswer(event)}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
