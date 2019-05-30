@@ -18,10 +18,7 @@ class DashboardRoute extends Component {
             words: res.words
           });
       }).catch(e => {
-        console.log(e);
         if (e.error === 'Unauthorized request') {
-            console.log('got inside the test');
-            console.log(this.context);
             this.context.processLogout();
             this.props.history.push('/login');
         }
