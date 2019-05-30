@@ -83,7 +83,22 @@ class LearningRoute extends Component {
   }
 
   render() {
-    let correctGuess = this.state.correctGuess
+    let correctGuess = this.state.correctGuess;
+    let inputField;
+    
+    if (correctGuess === 0) {
+      inputField = [
+      <label htmlFor='learn-guess-input'>What's the translation for this word?</label>,
+      <input 
+            type='text'
+            name='guess'
+            value={this.state.guess} 
+            id='learn-guess-input' 
+            className='guess' 
+            onChange={(event) => this.handleChangeAnswer(event)}
+            required></input>
+    ];
+  }
     return (
       <section>
         <h2>
@@ -95,15 +110,7 @@ class LearningRoute extends Component {
         <span>{this.state.lastWord}</span>
 
         <form className='main_form' onSubmit={(event) => this.handleSubmitAnswer(event)}>
-          <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
-          <input 
-            type='text'
-            name='guess'
-            value={this.state.guess} 
-            id='learn-guess-input' 
-            className='guess' 
-            onChange={(event) => this.handleChangeAnswer(event)}
-            required></input>
+          {inputField}
           <button type='submit'>
             {this.state.nextWord === this.state.lastWord && 'Submit your answer'}
             {this.state.nextWord !== this.state.lastWord && 'Try another word!'}
