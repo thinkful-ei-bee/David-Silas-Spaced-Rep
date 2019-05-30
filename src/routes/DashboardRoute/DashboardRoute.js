@@ -30,7 +30,7 @@ class DashboardRoute extends Component {
     return (
       <section>
         <h2>{this.state.language.name}</h2>
-        <h3>{'Total correct answers: ' + this.state.language.total_score}</h3>
+        <h2>{'Total correct answers: ' + this.state.language.total_score}</h2>
 
         <a href='/learn'>Start practicing</a>
 
@@ -39,7 +39,7 @@ class DashboardRoute extends Component {
         <ul className='practice-list'>
           {this.state.words.length && this.state.words.map(word => {
             return(
-              <li key={word.id}>
+              <li key={word.id} className="dashboard-word">
                 <h4>{word.original}</h4>
                 <div>{'correct answer count: ' + word.correct_count}</div>
                 <div>{'incorrect answer count: ' + word.incorrect_count}</div>

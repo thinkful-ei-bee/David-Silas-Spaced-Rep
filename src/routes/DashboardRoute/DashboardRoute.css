@@ -1,4 +1,9 @@
 .practice-list {
   list-style: none;
-  margin-left: -8%
+  margin-left: -8%;
+}
+
+.dashboard-word {
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
