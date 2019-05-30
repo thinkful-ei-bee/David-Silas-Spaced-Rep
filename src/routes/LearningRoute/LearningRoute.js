@@ -9,6 +9,8 @@ class LearningRoute extends Component {
     lastWord: '',
     wordCorrectCount: null,
     wordIncorrectCount: null,
+    lastWordCorrectCount: null,
+    lastWordIncorrectCount: null,
     totalScore: null,
     guess: '',
     correctGuess: 0,
@@ -55,6 +57,8 @@ class LearningRoute extends Component {
           this.setState({
             nextWord: head.nextWord,
             answer: head.answer,
+            lastWordCorrectCount: this.state.wordCorrectCount + 1,
+            lastWordIncorrectCount: this.state.wordIncorrectCount,
             wordCorrectCount: head.wordCorrectCount,
             wordIncorrectCount: head.wordIncorrectCount,
             totalScore: head.totalScore,
@@ -67,6 +71,8 @@ class LearningRoute extends Component {
           this.setState({
             nextWord: head.nextWord,
             answer: head.answer,
+            lastWordCorrectCount: this.state.wordCorrectCount,
+            lastWordIncorrectCount: this.state.wordIncorrectCount + 1,
             wordCorrectCount: head.wordCorrectCount,
             wordIncorrectCount: head.wordIncorrectCount,
             totalScore: head.totalScore,
