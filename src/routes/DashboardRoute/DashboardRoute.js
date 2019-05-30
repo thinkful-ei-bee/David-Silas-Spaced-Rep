@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import LanguageService from '../../services/language-service'
-import TokenService from '../../services/token-service';
 import UserContext from '../../contexts/UserContext';
 
 class DashboardRoute extends Component {
