@@ -88,8 +88,8 @@ class LearningRoute extends Component {
     
     if (correctGuess === 0) {
       inputField = [
-      <label htmlFor='learn-guess-input'>What's the translation for this word?</label>,
-      <input 
+      <label key='name' htmlFor='learn-guess-input'>What's the translation for this word?</label>,
+      <input key='input'
             type='text'
             name='guess'
             value={this.state.guess} 
