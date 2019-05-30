@@ -97,7 +97,9 @@ class LearningRoute extends Component {
         <form className='main_form' onSubmit={(event) => this.handleSubmitAnswer(event)}>
           <label htmlFor='learn-guess-input'>What's the translation for this word?</label>
           <input 
-            type='text' 
+            type='text'
+            name='guess'
+            value={this.state.guess} 
             id='learn-guess-input' 
             className='guess' 
             onChange={(event) => this.handleChangeAnswer(event)}
