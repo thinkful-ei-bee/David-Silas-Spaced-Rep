@@ -91,7 +91,9 @@ class LearningRoute extends Component {
   render() {
     let correctGuess = this.state.correctGuess;
     let inputField;
-    
+    let correctCount;
+    let incorrectCount;
+
     if (correctGuess === 0) {
       inputField = [
       <label key='name' htmlFor='learn-guess-input'>What's the translation for this word?</label>,
@@ -103,7 +105,12 @@ class LearningRoute extends Component {
             className='guess' 
             onChange={(event) => this.handleChangeAnswer(event)}
             required></input>
-    ];
+      ];
+      correctCount = this.state.wordCorrectCount;
+      incorrectCount = this.state.wordIncorrectCount;
+  } else {
+    correctCount = this.state.lastWordCorrectCount;
+    incorrectCount = this.state.lastWordIncorrectCount;
   }
     return (
       <section>
@@ -133,8 +140,8 @@ class LearningRoute extends Component {
           <p>{this.state.answer && `The correct translation for ${this.state.lastWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
         </div>
 
-        <p>{`You have answered this word correctly ${this.state.wordCorrectCount} times.`}</p>
-        <p>{`You have answered this word incorrectly ${this.state.wordIncorrectCount} times.`}</p>
+        <p>{`You have answered this word correctly ${correctCount} times.`}</p>
+        <p>{`You have answered this word incorrectly ${incorrectCount} times.`}</p>
       </section>
     );
   }
