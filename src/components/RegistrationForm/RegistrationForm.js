@@ -65,6 +65,7 @@ class RegistrationForm extends Component {
           <Input
             id='registration-username-input'
             name='username'
+            autoComplete='none'
             required
           />
         </div>
@@ -76,6 +77,7 @@ class RegistrationForm extends Component {
             id='registration-password-input'
             name='password'
             type='password'
+            autoComplete='new-password'
             required
           />
         </div>

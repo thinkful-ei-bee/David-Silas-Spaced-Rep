@@ -17,7 +17,6 @@ class LoginRoute extends Component {
   }
 
   render() {
-    console.log('arrived at login page');
     return (
       <section>
         <h2>Login</h2>
