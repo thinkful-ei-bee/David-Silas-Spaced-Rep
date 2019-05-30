@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LanguageService from '../../services/language-service'
 import UserContext from '../../contexts/UserContext';
+import './DashboardRoute.css';
 
 class DashboardRoute extends Component {
   state = {
@@ -35,7 +36,7 @@ class DashboardRoute extends Component {
 
         <h3>Words to practice</h3>
 
-        <ul>
+        <ul className='practice-list'>
           {this.state.words.length && this.state.words.map(word => {
             return(
               <li key={word.id}>
