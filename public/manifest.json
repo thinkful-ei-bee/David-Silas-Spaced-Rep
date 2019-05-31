@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Spaced Repetition",
+  "name": "Spaced Repetition App",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,7 +8,7 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://spaced-repetition-7kd6b5lb5.now.sh",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
