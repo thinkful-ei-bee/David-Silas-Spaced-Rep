@@ -14,18 +14,18 @@ A Thinkful data structure project.
 
 Clone/fork this client repo and [the server repo](https://github.com/thinkful-ei-bee/David-Silas-Spaced-Rep-API). Run npm install on the client side. For the server, run "npm install" and create postgreSQL databases named "spaced-repetition" and "spaced-repetition-test". Then create a .env file in the root folder of the client with the following variables:
 
-NODE_ENV=development
-PORT=8000
-TZ='UTC'
-MIGRATION_DB_HOST=127.0.0.1
-MIGRATION_DB_PORT=5432
-MIGRATION_DB_NAME=spaced-repetition
-MIGRATION_DB_USER=(the username for your new database)
-MIGRATION_DB_PASS=(password for your new database)
-DB_URL="postgresql://(user):(password)@localhost/spaced-repetition"
-TEST_DB_URL="postgresql://(user):(password)@localhost/spaced-repetition-test"
-JWT_SECRET="(whatever you want here)"
-JWT_EXPIRY="10h"
+NODE_ENV=development\
+PORT=8000\
+TZ='UTC'\
+MIGRATION_DB_HOST=127.0.0.1\
+MIGRATION_DB_PORT=5432\
+MIGRATION_DB_NAME=spaced-repetition\
+MIGRATION_DB_USER=(the username for your new database)\
+MIGRATION_DB_PASS=(password for your new database)\
+DB_URL="postgresql://(user):(password)@localhost/spaced-repetition"\
+TEST_DB_URL="postgresql://(user):(password)@localhost/spaced-repetition-test"\
+JWT_SECRET="(whatever you want here)"\
+JWT_EXPIRY="10h"\
 
 At that point you can use "npm run migrate" to configure the database for the project and "env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate" to set up the test database.
 
