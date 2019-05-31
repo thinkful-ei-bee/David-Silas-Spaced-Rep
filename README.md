@@ -12,25 +12,48 @@ A Thinkful data structure project.
 
 ## Setup
 
-Simply clone/fork, and run npm install
+Clone/fork this client repo and [the server repo](https://github.com/thinkful-ei-bee/David-Silas-Spaced-Rep-API). Run npm install on the client side. For the server, run "npm install" and create postgreSQL databases named "spaced-repetition" and "spaced-repetition-test". Then create a .env file in the root folder of the client with the following variables:
 
-The project expects host http://localhost:8000
+NODE_ENV=development
+PORT=8000
+TZ='UTC'
+MIGRATION_DB_HOST=127.0.0.1
+MIGRATION_DB_PORT=5432
+MIGRATION_DB_NAME=spaced-repetition
+MIGRATION_DB_USER=(the username for your new database)
+MIGRATION_DB_PASS=(password for your new database)
+DB_URL="postgresql://(user):(password)@localhost/spaced-repetition"
+TEST_DB_URL="postgresql://(user):(password)@localhost/spaced-repetition-test"
+JWT_SECRET="(whatever you want here)"
+JWT_EXPIRY="10h"
+
+At that point you can use "npm run migrate" to configure the database for the project and "env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate" to set up the test database.
+
+In the client, in the file /src/config.js, change the variable API_ENDPOINT to point to your local server; by default the correct value for development would be "http://localhost:8000/api".
+
+At that point you can start the server with "npm start" or "npm run dev" (to start nodemon), and the client with "npm start."
 
 ## Live App
 
+The [live app is here](https://spaced-repetition-7kd6b5lb5.now.sh). 
+
+## Screenshots
+
 ## API
 
-This project is deployed on Zeit and Heroku. 
+This project is deployed on Zeit and Heroku. Details for using the API may be found in the readme at the [repo for the server]().
 
 ## Authorization
-Use these credentials to test the app:
+Create your won account or use these credentials to test the app:
 
-Username:
+Username: testuser
 
-Password: 
+Password: abcA10!@
 
 ## Tech
 
+* JavaScript ES6
 * React
 * Express
+* PostgreSQL
 * Cypress
