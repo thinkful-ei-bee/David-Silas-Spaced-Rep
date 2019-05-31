@@ -25,7 +25,7 @@ MIGRATION_DB_PASS=(password for your new database)\
 DB_URL="postgresql://(user):(password)@localhost/spaced-repetition"\
 TEST_DB_URL="postgresql://(user):(password)@localhost/spaced-repetition-test"\
 JWT_SECRET="(whatever you want here)"\
-JWT_EXPIRY="10h"\
+JWT_EXPIRY="10h"
 
 At that point you can use "npm run migrate" to configure the database for the project and "env MIGRATION_DB_NAME=spaced-repetition-test npm run migrate" to set up the test database.
 
