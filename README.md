@@ -39,6 +39,11 @@ The [live app is here](https://ds-spaced-repetition.now.sh).
 
 ## Screenshots
 
+![Dashboard](screenshots/ScreenClip.png)
+
+![Learn a word](screenshots/ScreenClip2.png)
+
+
 ## API
 
 This project is deployed on Zeit and Heroku. Details for using the API may be found in the readme at the [repo for the server]().
