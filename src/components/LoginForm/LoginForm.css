@@ -1,0 +1,17 @@
+.inputs {
+  padding: 5px;
+}
+
+.inputs label {
+  position: relative;
+  right: 4px;
+}
+
+.inputs input {
+  position: relative;
+  left: 4px;
+}
+
+.password {
+  margin-bottom: 90px;
+}

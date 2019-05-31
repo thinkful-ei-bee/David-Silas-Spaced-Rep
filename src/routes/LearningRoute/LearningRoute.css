@@ -1,0 +1,22 @@
+.current-word {
+  font-size: 30px;
+  color: rgb(255, 131, 94);
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.learn-section h2 {
+  font-size: 22px;
+}
+
+.main_form label{
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+#learn-guess-input {
+  width: 250px;
+  display: inline-block;
+  margin-bottom: 24px;
+}

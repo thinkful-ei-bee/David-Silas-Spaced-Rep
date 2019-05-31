@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import LanguageService from '../../services/language-service'
+import './LearningRoute.css'
 
 
 class LearningRoute extends Component {
@@ -112,14 +113,14 @@ class LearningRoute extends Component {
     incorrectCount = this.state.lastWordIncorrectCount;
   }
     return (
-      <section>
+      <section className='learn-section'>
         <h2>
           {correctGuess === 0 && 'Translate the word:'}
           {correctGuess === true && 'You were correct! :D'}
           {correctGuess === false && 'Good try, but not quite right :('}
         </h2>
 
-        <span>{this.state.lastWord}</span>
+        <span className='current-word'>{this.state.lastWord}</span>
 
         <form className='main_form' onSubmit={(event) => this.handleSubmitAnswer(event)}>
           {inputField}
