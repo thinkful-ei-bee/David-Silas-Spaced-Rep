@@ -36,7 +36,6 @@ class LearningRoute extends Component {
 
   handleSubmitAnswer(event) {
     event.preventDefault()
-    console.log(this.state.guess)
 
     // If a guess has already been submitted
     if (this.state.isCorrect !== null) {
