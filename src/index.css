@@ -7,10 +7,10 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Archivo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: cornsilk;
+  background-color: rgb(239, 221, 255);
 }
 
 :root {
@@ -22,9 +22,10 @@ main {
   text-align: center;
 }
 
-header {
-  margin: auto;
-  text-align: center;
+h2 {
+  color: rgb(255, 184, 157);
 }
+
+
 
 

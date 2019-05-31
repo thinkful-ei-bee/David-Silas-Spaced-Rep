@@ -4,7 +4,9 @@ section {
   border: 1px solid gray;
   border-radius: 5px;
   padding: 10px;
-  background-color: rgb(255, 252, 248);
+  background-color: rgb(32, 25, 23);
+  color: rgb(239, 221, 255);
+  min-height: 300px;
 }
 
 .reg-element {
