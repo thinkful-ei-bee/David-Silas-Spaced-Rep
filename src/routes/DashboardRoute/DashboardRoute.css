@@ -1,9 +1,27 @@
+.start-practicing:visited {
+  color: white;
+}
+
 .practice-list {
   list-style: none;
-  margin-left: -8%;
+  margin-left: -10%;
+  text-align: center;
 }
 
 .dashboard-word {
   margin-top: 10%;
   margin-bottom: 10%;
+  background-color: rgb(255, 94, 94);
+  border-radius: 7px;
+  padding: 5px;
+}
+
+.dashboard-word h4 {
+  display: inline-block;
+  margin: auto;
+  font-size: 20px;
+}
+
+.dashboard-word div {
+
 }

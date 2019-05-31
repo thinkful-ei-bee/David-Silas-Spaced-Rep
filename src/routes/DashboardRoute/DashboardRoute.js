@@ -32,7 +32,7 @@ class DashboardRoute extends Component {
         <h2>{this.state.language.name}</h2>
         <h2>{'Total correct answers: ' + this.state.language.total_score}</h2>
 
-        <a href='/learn'>Start practicing</a>
+        <a className='start-practicing' href='/learn'>Start practicing</a>
 
         <h3>Words to practice</h3>
 
