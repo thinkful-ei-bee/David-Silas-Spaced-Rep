@@ -114,7 +114,7 @@ class LearningRoute extends Component {
     incorrectCount = this.state.lastWordIncorrectCount;
   }
     return (
-      <section>
+      <section className='learn-section'>
         <h2>
           {correctGuess === 0 && 'Translate the word:'}
           {correctGuess === true && 'You were correct! :D'}

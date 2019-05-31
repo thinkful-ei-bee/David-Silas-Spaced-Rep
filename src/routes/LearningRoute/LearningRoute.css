@@ -6,6 +6,10 @@
   margin-bottom: 20px;
 }
 
+.learn-section h2 {
+  font-size: 22px;
+}
+
 .main_form label{
   display: inline-block;
   margin-bottom: 6px;
