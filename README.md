@@ -35,7 +35,7 @@ At that point you can start the server with "npm start" or "npm run dev" (to sta
 
 ## Live App
 
-The [live app is here](https://spaced-repetition-7kd6b5lb5.now.sh). 
+The [live app is here](https://ds-spaced-repetition.now.sh). 
 
 ## Screenshots
 
