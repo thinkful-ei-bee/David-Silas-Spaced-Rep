@@ -6,6 +6,9 @@ import Button from '../Button/Button'
 import './RegistrationForm.css'
 
 class RegistrationForm extends Component {
+  state = {
+    error: null,
+  }
   static defaultProps = {
     onRegistrationSuccess: () => { }
   }
@@ -17,20 +20,28 @@ class RegistrationForm extends Component {
   handleSubmit = ev => {
     ev.preventDefault()
     const { name, username, password } = ev.target
-    AuthApiService.postUser({
-      name: name.value,
-      username: username.value,
-      password: password.value,
-    })
-      .then(user => {
-        name.value = ''
-        username.value = ''
-        password.value = ''
-        this.props.onRegistrationSuccess()
+    if (password.length < 8) {
+      this.setState({ error: 'Password must be at least 8 characters.' })
+    }
+
+    else {
+
+      AuthApiService.postUser({
+        name: name.value,
+        username: username.value,
+        password: password.value,
       })
-      .catch(res => {
-        this.setState({ error: res.error })
-      })
+        .then(user => {
+          this.setState({ error: null })
+          name.value = ''
+          username.value = ''
+          password.value = ''
+          this.props.onRegistrationSuccess()
+        })
+        .catch(res => {
+          this.setState({ error: res.error })
+        })
+    }
   }
 
   componentDidMount() {

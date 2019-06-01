@@ -3,3 +3,7 @@ button {
   padding: 1px 30px;
   background-color: white;
 }
+
+.reg-element a:visited {
+  color: white;
+}

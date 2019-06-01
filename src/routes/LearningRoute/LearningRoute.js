@@ -140,8 +140,11 @@ class LearningRoute extends Component {
           <p>{this.state.answer && `The correct translation for ${this.state.lastWord} was ${this.state.answer} and you chose ${this.state.guess}!`}</p>
         </div>
 
-        <p>{`You have answered this word correctly ${correctCount} times.`}</p>
-        <p>{`You have answered this word incorrectly ${incorrectCount} times.`}</p>
+        <p>{correctCount === 1 && `You have answered this word correctly ${correctCount} time.`}</p>
+        <p>{incorrectCount === 1 &&`You have answered this word incorrectly ${incorrectCount} time.`}</p>
+
+        <p>{correctCount !== 1 && `You have answered this word correctly ${correctCount} times.`}</p>
+        <p>{incorrectCount !== 1 && `You have answered this word incorrectly ${incorrectCount} times.`}</p>
       </section>
     );
   }
